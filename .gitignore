@@ -1,0 +1,7 @@
+node_modules
+.env
+uploads
+*.log
+*.xlsx
+test-flats.csv
+test-screenshot.png
