@@ -96,7 +96,9 @@ router.post('/', upload.single('screenshot'), async (req, res) => {
           upi_reference: upi_reference || null,
           screenshot_path: filePath,
           status: 'pending',
-          source: 'manual_upload'
+                   source: ['manual_upload', 'android_share', 'pwa_share', 'admin', 'cash'].includes(req.body.source)
+            ? req.body.source
+            : 'manual_upload',
         }
       ])
       .select()
